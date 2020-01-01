@@ -1,0 +1,111 @@
+{
+    "name": "Protocolo",
+    "fields": [
+        {
+            "fieldName": "solicitante",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataSolicitacao",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataEnvio",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "enviadoPor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCriacao",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "usuarioCriacao",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "localizacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomenclatura",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "formato",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "versao",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "versao",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "documento",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "documento",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoProtocolo",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "tipoProtocolo",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "setor",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "setor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "categoria",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "categoria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "numeracao",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "numeracao",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200101132709",
+    "entityTableName": "protocolo",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

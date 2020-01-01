@@ -1,0 +1,23 @@
+{
+    "name": "GrupoSolicitante",
+    "fields": [
+        {
+            "fieldName": "nomeGrupoSolicitante",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200101132702",
+    "entityTableName": "grupo_solicitante",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

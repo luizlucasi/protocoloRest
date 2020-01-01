@@ -1,0 +1,38 @@
+{
+    "name": "Usuario",
+    "fields": [
+        {
+            "fieldName": "nomeUsuario",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoUsuario",
+            "otherEntityRelationshipName": "usuario",
+            "relationshipName": "tipoUsuario",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200101132707",
+    "entityTableName": "usuario",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
