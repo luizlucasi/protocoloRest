@@ -1,0 +1,93 @@
+
+entity Categoria {
+	nomeCategoria String required,
+	codCategoria String required,
+	isActive Boolean required
+}
+
+entity Documento {
+	nomeDocumento String required   ,
+	codDocumento String required ,
+	isActive  Boolean required
+ }
+ 
+ entity GrupoSolicitante {
+ 	nomeGrupoSolicitante String required
+ }
+ 
+ entity Numeracao {
+ 	numero Long required,
+    ano Integer required
+ 
+ }
+ 
+ entity Setor{
+ 	nomeSetor String required,
+    codigoSetor String required,
+    isActive Boolean required
+ }
+
+entity TipoProtocolo {
+	nomeProtocolo String required,
+    codProtocolo String required,
+    isActive Boolean required
+    
+
+}
+
+entity TipoUsuario {
+	descricao String required,
+  
+}
+
+entity Usuario {
+	nomeUsuario String required,
+    isActive Boolean required
+}
+
+
+
+entity Versao {
+	numeroVersao String required
+
+}
+
+entity Protocolo {
+	solicitante String required,
+    dataSolicitacao Instant required,
+    dataEnvio Instant    ,
+	enviadoPor      String    ,
+	dataCriacao      Instant required,
+	usuarioCriacao    Instant required,
+    localizacao String,
+    observacao String,
+    nomenclatura String,
+    formato  String  
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	// defining multiple OneToMany
+    TipoUsuario{usuario} to Usuario
+    // defining multiple OneToMany
+    Versao{protocolo} to Protocolo
+    // defining multiple OneToMany
+    Documento{protocolo} to Protocolo
+    TipoProtocolo{protocolo} to Protocolo
+    Setor{protocolo} to Protocolo
+    Categoria{protocolo} to Protocolo
+    Numeracao{protocolo} to Protocolo
+}
+
+// Set pagination options
+paginate Protocolo with infinite-scroll
+paginate Usuario with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

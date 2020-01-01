@@ -1,0 +1,30 @@
+{
+    "name": "Versao",
+    "fields": [
+        {
+            "fieldName": "numeroVersao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "protocolo",
+            "otherEntityRelationshipName": "versao",
+            "relationshipName": "protocolo"
+        }
+    ],
+    "changelogDate": "20200101132708",
+    "entityTableName": "versao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

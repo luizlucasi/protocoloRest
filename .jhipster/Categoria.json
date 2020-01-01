@@ -1,0 +1,44 @@
+{
+    "name": "Categoria",
+    "fields": [
+        {
+            "fieldName": "nomeCategoria",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codCategoria",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "protocolo",
+            "otherEntityRelationshipName": "categoria",
+            "relationshipName": "protocolo"
+        }
+    ],
+    "changelogDate": "20200101132700",
+    "entityTableName": "categoria",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Documento",
+    "fields": [
+        {
+            "fieldName": "nomeDocumento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codDocumento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "protocolo",
+            "otherEntityRelationshipName": "documento",
+            "relationshipName": "protocolo"
+        }
+    ],
+    "changelogDate": "20200101132701",
+    "entityTableName": "documento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "TipoProtocolo",
+    "fields": [
+        {
+            "fieldName": "nomeProtocolo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codProtocolo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "protocolo",
+            "otherEntityRelationshipName": "tipoProtocolo",
+            "relationshipName": "protocolo"
+        }
+    ],
+    "changelogDate": "20200101132705",
+    "entityTableName": "tipo_protocolo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

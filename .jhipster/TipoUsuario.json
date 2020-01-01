@@ -1,0 +1,30 @@
+{
+    "name": "TipoUsuario",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "usuario",
+            "otherEntityRelationshipName": "tipoUsuario",
+            "relationshipName": "usuario"
+        }
+    ],
+    "changelogDate": "20200101132706",
+    "entityTableName": "tipo_usuario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

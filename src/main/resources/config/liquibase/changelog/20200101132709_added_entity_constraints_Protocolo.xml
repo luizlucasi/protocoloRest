@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Protocolo.
+    -->
+    <changeSet id="20200101132709-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="versao_id"
+                                 baseTableName="protocolo"
+                                 constraintName="fk_protocolo_versao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="versao"/>
+
+        <addForeignKeyConstraint baseColumnNames="documento_id"
+                                 baseTableName="protocolo"
+                                 constraintName="fk_protocolo_documento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_protocolo_id"
+                                 baseTableName="protocolo"
+                                 constraintName="fk_protocolo_tipo_protocolo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_protocolo"/>
+
+        <addForeignKeyConstraint baseColumnNames="setor_id"
+                                 baseTableName="protocolo"
+                                 constraintName="fk_protocolo_setor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="setor"/>
+
+        <addForeignKeyConstraint baseColumnNames="categoria_id"
+                                 baseTableName="protocolo"
+                                 constraintName="fk_protocolo_categoria_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categoria"/>
+
+        <addForeignKeyConstraint baseColumnNames="numeracao_id"
+                                 baseTableName="protocolo"
+                                 constraintName="fk_protocolo_numeracao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="numeracao"/>
+
+    </changeSet>
+</databaseChangeLog>
