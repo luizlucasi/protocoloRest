@@ -75,7 +75,8 @@ entity Protocolo {
 }
 
 relationship OneToOne {
-	NumeroProtocolo{protocolo} to Protocolo
+	   
+    Protocolo{numProtocolo(numProtocolo)} to NumeroProtocolo
 }
 
 // defining multiple OneToMany relationships with comments
