@@ -58,6 +58,10 @@ public class Protocolo implements Serializable {
     @Column(name = "formato")
     private Formato formato;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private NumeroProtocolo numProtocolo;
+
     @ManyToOne
     @JsonIgnoreProperties("protocolos")
     private Versao versao;
@@ -219,6 +223,19 @@ public class Protocolo implements Serializable {
 
     public void setFormato(Formato formato) {
         this.formato = formato;
+    }
+
+    public NumeroProtocolo getNumProtocolo() {
+        return numProtocolo;
+    }
+
+    public Protocolo numProtocolo(NumeroProtocolo numeroProtocolo) {
+        this.numProtocolo = numeroProtocolo;
+        return this;
+    }
+
+    public void setNumProtocolo(NumeroProtocolo numeroProtocolo) {
+        this.numProtocolo = numeroProtocolo;
     }
 
     public Versao getVersao() {

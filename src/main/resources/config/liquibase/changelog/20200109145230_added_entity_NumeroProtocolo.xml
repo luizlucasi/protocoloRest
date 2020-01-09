@@ -21,9 +21,6 @@
             <column name="numero" type="bigint">
                 <constraints nullable="false" />
             </column>
-            <column name="protocolo_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_numero_protocolo_protocolo_id" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>

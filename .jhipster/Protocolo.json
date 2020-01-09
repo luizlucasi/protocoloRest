@@ -57,6 +57,14 @@
     ],
     "relationships": [
         {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "numeroProtocolo",
+            "otherEntityRelationshipName": "protocolo",
+            "relationshipName": "numProtocolo",
+            "otherEntityField": "numProtocolo",
+            "ownerSide": true
+        },
+        {
             "relationshipType": "many-to-one",
             "otherEntityName": "versao",
             "otherEntityRelationshipName": "protocolo",

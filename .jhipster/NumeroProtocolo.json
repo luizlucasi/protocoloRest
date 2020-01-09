@@ -16,16 +16,7 @@
             ]
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "protocolo",
-            "otherEntityRelationshipName": "numeroProtocolo",
-            "relationshipName": "protocolo",
-            "otherEntityField": "id",
-            "ownerSide": true
-        }
-    ],
+    "relationships": [],
     "changelogDate": "20200109145230",
     "entityTableName": "numero_protocolo",
     "dto": "no",

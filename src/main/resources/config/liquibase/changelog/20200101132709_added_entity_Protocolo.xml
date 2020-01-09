@@ -45,6 +45,9 @@
             <column name="formato" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="num_protocolo_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_protocolo_num_protocolo_id" />
+            </column>
             <column name="versao_id" type="bigint">
                 <constraints nullable="true" />
             </column>

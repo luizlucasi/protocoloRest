@@ -7,6 +7,8 @@ import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipste
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { INumeroProtocolo } from 'app/shared/model/numero-protocolo.model';
+import { getEntities as getNumeroProtocolos } from 'app/entities/numero-protocolo/numero-protocolo.reducer';
 import { IVersao } from 'app/shared/model/versao.model';
 import { getEntities as getVersaos } from 'app/entities/versao/versao.reducer';
 import { IDocumento } from 'app/shared/model/documento.model';
@@ -27,6 +29,7 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface IProtocoloUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const ProtocoloUpdate = (props: IProtocoloUpdateProps) => {
+  const [numProtocoloId, setNumProtocoloId] = useState('0');
   const [versaoId, setVersaoId] = useState('0');
   const [documentoId, setDocumentoId] = useState('0');
   const [tipoProtocoloId, setTipoProtocoloId] = useState('0');
@@ -35,7 +38,18 @@ export const ProtocoloUpdate = (props: IProtocoloUpdateProps) => {
   const [numeracaoId, setNumeracaoId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { protocoloEntity, versaos, documentos, tipoProtocolos, setors, categorias, numeracaos, loading, updating } = props;
+  const {
+    protocoloEntity,
+    numeroProtocolos,
+    versaos,
+    documentos,
+    tipoProtocolos,
+    setors,
+    categorias,
+    numeracaos,
+    loading,
+    updating
+  } = props;
 
   const handleClose = () => {
     props.history.push('/protocolo');
@@ -46,6 +60,7 @@ export const ProtocoloUpdate = (props: IProtocoloUpdateProps) => {
       props.getEntity(props.match.params.id);
     }
 
+    props.getNumeroProtocolos();
     props.getVersaos();
     props.getDocumentos();
     props.getTipoProtocolos();
@@ -213,6 +228,19 @@ export const ProtocoloUpdate = (props: IProtocoloUpdateProps) => {
                 </AvInput>
               </AvGroup>
               <AvGroup>
+                <Label for="protocolo-numProtocolo">Num Protocolo</Label>
+                <AvInput id="protocolo-numProtocolo" type="select" className="form-control" name="numProtocolo.id">
+                  <option value="" key="0" />
+                  {numeroProtocolos
+                    ? numeroProtocolos.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.numProtocolo}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
+              <AvGroup>
                 <Label for="protocolo-versao">Versao</Label>
                 <AvInput id="protocolo-versao" type="select" className="form-control" name="versao.id">
                   <option value="" key="0" />
@@ -309,6 +337,7 @@ export const ProtocoloUpdate = (props: IProtocoloUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
+  numeroProtocolos: storeState.numeroProtocolo.entities,
   versaos: storeState.versao.entities,
   documentos: storeState.documento.entities,
   tipoProtocolos: storeState.tipoProtocolo.entities,
@@ -322,6 +351,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getNumeroProtocolos,
   getVersaos,
   getDocumentos,
   getTipoProtocolos,
