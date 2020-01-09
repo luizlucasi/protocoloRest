@@ -24,8 +24,10 @@
     <include file="config/liquibase/changelog/20200101132707_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200101132708_added_entity_Versao.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200101132709_added_entity_Protocolo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200109145230_added_entity_NumeroProtocolo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200101132707_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200101132709_added_entity_constraints_Protocolo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200109145230_added_entity_constraints_NumeroProtocolo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

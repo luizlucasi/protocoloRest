@@ -52,6 +52,10 @@ import versao, {
 import protocolo, {
   ProtocoloState
 } from 'app/entities/protocolo/protocolo.reducer';
+// prettier-ignore
+import numeroProtocolo, {
+  NumeroProtocoloState
+} from 'app/entities/numero-protocolo/numero-protocolo.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -75,6 +79,7 @@ export interface IRootState {
   readonly usuario: UsuarioState;
   readonly versao: VersaoState;
   readonly protocolo: ProtocoloState;
+  readonly numeroProtocolo: NumeroProtocoloState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -100,6 +105,7 @@ const rootReducer = combineReducers<IRootState>({
   usuario,
   versao,
   protocolo,
+  numeroProtocolo,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });

@@ -201,7 +201,16 @@ export const ProtocoloUpdate = (props: IProtocoloUpdateProps) => {
                 <Label id="formatoLabel" for="protocolo-formato">
                   Formato
                 </Label>
-                <AvField id="protocolo-formato" type="text" name="formato" />
+                <AvInput
+                  id="protocolo-formato"
+                  type="select"
+                  className="form-control"
+                  name="formato"
+                  value={(!isNew && protocoloEntity.formato) || 'D'}
+                >
+                  <option value="D">D</option>
+                  <option value="F">F</option>
+                </AvInput>
               </AvGroup>
               <AvGroup>
                 <Label for="protocolo-versao">Versao</Label>

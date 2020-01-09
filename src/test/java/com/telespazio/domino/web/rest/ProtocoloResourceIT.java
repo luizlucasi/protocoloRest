@@ -30,6 +30,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.telespazio.domino.domain.enumeration.Formato;
 /**
  * Integration tests for the {@link ProtocoloResource} REST controller.
  */
@@ -63,8 +64,8 @@ public class ProtocoloResourceIT {
     private static final String DEFAULT_NOMENCLATURA = "AAAAAAAAAA";
     private static final String UPDATED_NOMENCLATURA = "BBBBBBBBBB";
 
-    private static final String DEFAULT_FORMATO = "AAAAAAAAAA";
-    private static final String UPDATED_FORMATO = "BBBBBBBBBB";
+    private static final Formato DEFAULT_FORMATO = Formato.D;
+    private static final Formato UPDATED_FORMATO = Formato.F;
 
     @Autowired
     private ProtocoloRepository protocoloRepository;
@@ -288,7 +289,7 @@ public class ProtocoloResourceIT {
             .andExpect(jsonPath("$.[*].localizacao").value(hasItem(DEFAULT_LOCALIZACAO)))
             .andExpect(jsonPath("$.[*].observacao").value(hasItem(DEFAULT_OBSERVACAO)))
             .andExpect(jsonPath("$.[*].nomenclatura").value(hasItem(DEFAULT_NOMENCLATURA)))
-            .andExpect(jsonPath("$.[*].formato").value(hasItem(DEFAULT_FORMATO)));
+            .andExpect(jsonPath("$.[*].formato").value(hasItem(DEFAULT_FORMATO.toString())));
     }
     
     @Test
@@ -311,7 +312,7 @@ public class ProtocoloResourceIT {
             .andExpect(jsonPath("$.localizacao").value(DEFAULT_LOCALIZACAO))
             .andExpect(jsonPath("$.observacao").value(DEFAULT_OBSERVACAO))
             .andExpect(jsonPath("$.nomenclatura").value(DEFAULT_NOMENCLATURA))
-            .andExpect(jsonPath("$.formato").value(DEFAULT_FORMATO));
+            .andExpect(jsonPath("$.formato").value(DEFAULT_FORMATO.toString()));
     }
 
     @Test

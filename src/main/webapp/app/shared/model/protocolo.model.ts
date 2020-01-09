@@ -5,6 +5,7 @@ import { ITipoProtocolo } from 'app/shared/model/tipo-protocolo.model';
 import { ISetor } from 'app/shared/model/setor.model';
 import { ICategoria } from 'app/shared/model/categoria.model';
 import { INumeracao } from 'app/shared/model/numeracao.model';
+import { Formato } from 'app/shared/model/enumerations/formato.model';
 
 export interface IProtocolo {
   id?: number;
@@ -17,7 +18,7 @@ export interface IProtocolo {
   localizacao?: string;
   observacao?: string;
   nomenclatura?: string;
-  formato?: string;
+  formato?: Formato;
   versao?: IVersao;
   documento?: IDocumento;
   tipoProtocolo?: ITipoProtocolo;

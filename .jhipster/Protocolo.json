@@ -51,7 +51,8 @@
         },
         {
             "fieldName": "formato",
-            "fieldType": "String"
+            "fieldType": "Formato",
+            "fieldValues": "D,F"
         }
     ],
     "relationships": [
