@@ -73,6 +73,8 @@ export const ProtocoloDetail = (props: IProtocoloDetailProps) => {
             <span id="formato">Formato</span>
           </dt>
           <dd>{protocoloEntity.formato}</dd>
+          <dt>Num Protocolo</dt>
+          <dd>{protocoloEntity.numProtocolo ? protocoloEntity.numProtocolo.numProtocolo : ''}</dd>
           <dt>Versao</dt>
           <dd>{protocoloEntity.versao ? protocoloEntity.versao.id : ''}</dd>
           <dt>Documento</dt>

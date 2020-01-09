@@ -35,7 +35,6 @@ export const NumeroProtocolo = (props: INumeroProtocoloProps) => {
                 <th>ID</th>
                 <th>Ano</th>
                 <th>Numero</th>
-                <th>Protocolo</th>
                 <th />
               </tr>
             </thead>
@@ -49,13 +48,6 @@ export const NumeroProtocolo = (props: INumeroProtocoloProps) => {
                   </td>
                   <td>{numeroProtocolo.ano}</td>
                   <td>{numeroProtocolo.numero}</td>
-                  <td>
-                    {numeroProtocolo.protocolo ? (
-                      <Link to={`protocolo/${numeroProtocolo.protocolo.id}`}>{numeroProtocolo.protocolo.id}</Link>
-                    ) : (
-                      ''
-                    )}
-                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${numeroProtocolo.id}`} color="info" size="sm">

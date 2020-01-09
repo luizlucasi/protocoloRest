@@ -33,8 +33,6 @@ export const NumeroProtocoloDetail = (props: INumeroProtocoloDetailProps) => {
             <span id="numero">Numero</span>
           </dt>
           <dd>{numeroProtocoloEntity.numero}</dd>
-          <dt>Protocolo</dt>
-          <dd>{numeroProtocoloEntity.protocolo ? numeroProtocoloEntity.protocolo.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/numero-protocolo" replace color="info">
           <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>

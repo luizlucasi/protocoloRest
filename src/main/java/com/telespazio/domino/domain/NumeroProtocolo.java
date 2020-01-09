@@ -27,10 +27,6 @@ public class NumeroProtocolo implements Serializable {
     @Column(name = "numero", nullable = false)
     private Long numero;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Protocolo protocolo;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -64,19 +60,6 @@ public class NumeroProtocolo implements Serializable {
 
     public void setNumero(Long numero) {
         this.numero = numero;
-    }
-
-    public Protocolo getProtocolo() {
-        return protocolo;
-    }
-
-    public NumeroProtocolo protocolo(Protocolo protocolo) {
-        this.protocolo = protocolo;
-        return this;
-    }
-
-    public void setProtocolo(Protocolo protocolo) {
-        this.protocolo = protocolo;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

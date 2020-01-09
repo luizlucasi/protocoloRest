@@ -7,8 +7,6 @@ import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipste
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { IProtocolo } from 'app/shared/model/protocolo.model';
-import { getEntities as getProtocolos } from 'app/entities/protocolo/protocolo.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './numero-protocolo.reducer';
 import { INumeroProtocolo } from 'app/shared/model/numero-protocolo.model';
 import { convertDateTimeFromServer, convertDateTimeToServer } from 'app/shared/util/date-utils';
@@ -17,10 +15,9 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface INumeroProtocoloUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const NumeroProtocoloUpdate = (props: INumeroProtocoloUpdateProps) => {
-  const [protocoloId, setProtocoloId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { numeroProtocoloEntity, protocolos, loading, updating } = props;
+  const { numeroProtocoloEntity, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/numero-protocolo');
@@ -32,8 +29,6 @@ export const NumeroProtocoloUpdate = (props: INumeroProtocoloUpdateProps) => {
     } else {
       props.getEntity(props.match.params.id);
     }
-
-    props.getProtocolos();
   }, []);
 
   useEffect(() => {
@@ -104,19 +99,6 @@ export const NumeroProtocoloUpdate = (props: INumeroProtocoloUpdateProps) => {
                   }}
                 />
               </AvGroup>
-              <AvGroup>
-                <Label for="numero-protocolo-protocolo">Protocolo</Label>
-                <AvInput id="numero-protocolo-protocolo" type="select" className="form-control" name="protocolo.id">
-                  <option value="" key="0" />
-                  {protocolos
-                    ? protocolos.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/numero-protocolo" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -136,7 +118,6 @@ export const NumeroProtocoloUpdate = (props: INumeroProtocoloUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
-  protocolos: storeState.protocolo.entities,
   numeroProtocoloEntity: storeState.numeroProtocolo.entity,
   loading: storeState.numeroProtocolo.loading,
   updating: storeState.numeroProtocolo.updating,
@@ -144,7 +125,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getProtocolos,
   getEntity,
   updateEntity,
   createEntity,

@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { INumeroProtocolo } from 'app/shared/model/numero-protocolo.model';
 import { IVersao } from 'app/shared/model/versao.model';
 import { IDocumento } from 'app/shared/model/documento.model';
 import { ITipoProtocolo } from 'app/shared/model/tipo-protocolo.model';
@@ -19,6 +20,7 @@ export interface IProtocolo {
   observacao?: string;
   nomenclatura?: string;
   formato?: Formato;
+  numProtocolo?: INumeroProtocolo;
   versao?: IVersao;
   documento?: IDocumento;
   tipoProtocolo?: ITipoProtocolo;

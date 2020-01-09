@@ -128,6 +128,9 @@ export const Protocolo = (props: IProtocoloProps) => {
                     Formato <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
+                    Num Protocolo <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
                     Versao <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
@@ -174,6 +177,13 @@ export const Protocolo = (props: IProtocoloProps) => {
                     <td>{protocolo.observacao}</td>
                     <td>{protocolo.nomenclatura}</td>
                     <td>{protocolo.formato}</td>
+                    <td>
+                      {protocolo.numProtocolo ? (
+                        <Link to={`numero-protocolo/${protocolo.numProtocolo.id}`}>{protocolo.numProtocolo.numProtocolo}</Link>
+                      ) : (
+                        ''
+                      )}
+                    </td>
                     <td>{protocolo.versao ? <Link to={`versao/${protocolo.versao.id}`}>{protocolo.versao.id}</Link> : ''}</td>
                     <td>{protocolo.documento ? <Link to={`documento/${protocolo.documento.id}`}>{protocolo.documento.id}</Link> : ''}</td>
                     <td>
