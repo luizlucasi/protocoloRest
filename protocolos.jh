@@ -52,6 +52,15 @@ entity Versao {
 
 }
 
+enum Formato {
+    D, F
+}
+
+entity NumeroProtocolo {
+	ano String required,
+    numero Long required
+}
+
 entity Protocolo {
 	solicitante String required,
     dataSolicitacao Instant required,
@@ -62,7 +71,11 @@ entity Protocolo {
     localizacao String,
     observacao String,
     nomenclatura String,
-    formato  String  
+    formato  Formato  
+}
+
+relationship OneToOne {
+	NumeroProtocolo{protocolo} to Protocolo
 }
 
 // defining multiple OneToMany relationships with comments
