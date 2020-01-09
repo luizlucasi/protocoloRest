@@ -7,6 +7,8 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.telespazio.domino.domain.enumeration.Formato;
+
 /**
  * A Protocolo.
  */
@@ -52,8 +54,9 @@ public class Protocolo implements Serializable {
     @Column(name = "nomenclatura")
     private String nomenclatura;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "formato")
-    private String formato;
+    private Formato formato;
 
     @ManyToOne
     @JsonIgnoreProperties("protocolos")
@@ -205,16 +208,16 @@ public class Protocolo implements Serializable {
         this.nomenclatura = nomenclatura;
     }
 
-    public String getFormato() {
+    public Formato getFormato() {
         return formato;
     }
 
-    public Protocolo formato(String formato) {
+    public Protocolo formato(Formato formato) {
         this.formato = formato;
         return this;
     }
 
-    public void setFormato(String formato) {
+    public void setFormato(Formato formato) {
         this.formato = formato;
     }
 
